@@ -26,16 +26,15 @@ def generate_time_based_uuid():
 
 def generate_namespace_based_uuid(namespace, name):
     """
-    Generate namespace based uuid
+    Generate a UUID based on a namespace and a name (version 5)
+    namespace = uuid.UUID("6ba7b810-9dad-11d1-80b4-00c04fd430c8")
+    name = "example.com"
 
     @param namespace:str
     @name str
 
     @return: uuid
     """
-    # Generate a UUID based on a namespace and a name (version 5)
-    # namespace = uuid.UUID("6ba7b810-9dad-11d1-80b4-00c04fd430c8")
-    # name = "example.com"
     namespace_based_uuid = uuid.uuid5(namespace, name)
     print("Namespace-based UUID (version 5):", namespace_based_uuid)
     return namespace_based_uuid
