@@ -6,9 +6,9 @@ on:
       - master
       - develop
     paths:
-      - src/
-      - test/
-      - pyproject.toml
+      - "src/**"
+      - "test/**"
+      - "**.toml"
   pull_request:
     branches:
       - master
