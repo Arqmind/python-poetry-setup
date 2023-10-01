@@ -206,3 +206,112 @@ Adjust the settings as per your requirements.
 isort is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type. It provides a command line utility, Python library and plugins for various editors to quickly sort all your imports. It requires Python 3.7+ to run but supports formatting Python 2 code too.
 
 Fore more details see [here](https://pycqa.github.io/isort/)
+
+# pre-commit
+
+Git hook scripts are useful for identifying simple issues before submission to code review. We run our hooks on every commit to automatically point out issues in code such as missing semicolons, trailing whitespace, and debug statements. By pointing these issues out before code review, this allows a code reviewer to focus on the architecture of a change while not wasting time with trivial style nitpicks.
+
+### Installation
+
+Using poetry:
+
+```
+poetry add pre-commit
+```
+
+Using pip:
+
+```
+pip install pre-commit
+```
+
+Using homebrew:
+
+```
+brew install pre-commit
+```
+
+#### Check version
+
+```
+pre-commit --version
+pre-commit 3.4.0
+```
+
+### Add a pre-commit configuration
+
+create a file named .pre-commit-config.yaml
+you can generate a very basic configuration using pre-commit sample-config
+the full set of options for the configuration are listed [here](https://pre-commit.com/#plugins)
+this example uses a formatter for python code, however pre-commit works for any programming language
+See [here](https://pre-commit.com/hooks.html) for other supported hooks
+
+```
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
+```
+
+or see the [.pre-commit-config.yaml](.pre-commit-config.yaml)
+
+### Install the git hook script
+
+```
+pre-commit install
+```
+
+Now pre-commit will run automatically on git commit!
+
+#### [Optional] Run it manually
+
+```css
+$ pre-commit run --all-files
+[WARNING] Unexpected key(s) present at root: ignore
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Initializing environment for https://github.com/PyCQA/pylint.
+[INFO] Initializing environment for https://github.com/PyCQA/pylint:pylint.
+[INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy.
+[INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy:requests.
+[INFO] Initializing environment for https://github.com/PyCQA/isort.
+[INFO] Initializing environment for https://github.com/PyCQA/isort:isort.
+[INFO] Initializing environment for https://github.com/psf/black.
+[INFO] Initializing environment for https://github.com/psf/black:black.
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/PyCQA/pylint.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/pre-commit/mirrors-mypy.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/PyCQA/isort.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/psf/black.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+Trim Trailing Whitespace.................................................Passed
+Fix End of Files.........................................................Failed
+- hook id: end-of-file-fixer
+- exit code: 1
+- files were modified by this hook
+
+Fixing pyproject.toml
+
+Check Yaml...............................................................Passed
+Check for added large files..............................................Passed
+pylint...................................................................Passed
+mypy.....................................................................Passed
+isort....................................................................Passed
+black....................................................................Passed
+
+```
