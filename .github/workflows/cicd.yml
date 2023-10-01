@@ -91,11 +91,12 @@ jobs:
       - name: Run coverage
         run: poetry run coverage xml
 
-      - name: Get Coverage
-        uses: orgoro/coverage@v3.1
-        with:
-          coverageFile: coverage.xml
-          token: ${{ secrets.GITHUB_TOKEN }}
+      # only works with PR
+      # - name: Get Coverage
+      #  uses: orgoro/coverage@v3.1
+      #  with:
+      #    coverageFile: coverage.xml
+      #    token: ${{ secrets.GITHUB_TOKEN }}
 
   bump-version:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
