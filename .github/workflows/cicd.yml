@@ -1,4 +1,4 @@
-name: WBChem DEV CI/CD
+name: DEV CI/CD
 
 on:
   push:
