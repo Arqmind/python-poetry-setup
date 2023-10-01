@@ -79,3 +79,124 @@ Poetry will generate a poetry.lock file that contains the exact versions of your
 ```
 poetry export --format requirements.txt --output requirements.txt
 ```
+
+# Pylint
+
+Pylint is a widely used static code analysis tool for Python that helps identify errors, enforce coding standards, and promote code consistency. Here's a step-by-step guide on how to use Pylint:
+
+### Install Pylint:
+
+If you don't have Pylint installed, you can install it using pip, Python's package installer:
+
+```css
+pip install pylint
+```
+
+### Running Pylint on a Python file:
+
+To run Pylint on a specific Python file, use the following command:
+
+```
+pylint your_file.py
+```
+
+Replace `your_file.py` with the name of the Python file you want to analyze.
+
+### Customizing Pylint Configuration:
+
+Pylint allows you to customize its behavior using a configuration file. Create a `pylint.rc` file in your project directory or use an existing one. Here's an example of a basic configuration file:
+
+```ini
+Copy code
+[FORMAT]
+max-line-length = 120
+
+[MESSAGES CONTROL]
+disable = C0301
+```
+
+In this example, we set the maximum line length to 120 characters and disable the C0301 message (line too long) to ignore that particular message.
+
+### Running Pylint with a Configuration File:
+
+To use a custom configuration file, specify it when running Pylint:
+
+```css
+Copy code
+pylint --rcfile=pylint.rc your_file.py
+```
+
+### Output and Messages:
+
+Pylint provides detailed output with messages and suggestions for improvement. It also assigns a score to your code based on the analysis. Higher scores indicate better code quality.
+
+### Integrating with IDEs or Editors:
+
+Pylint can be integrated into popular code editors or IDEs, such as VS Code, PyCharm, Sublime Text, etc. Check the specific documentation for your chosen editor to set up Pylint integration.
+
+### Using Pylint with Continuous Integration (CI):
+
+You can integrate Pylint into your continuous integration process to enforce code quality checks automatically. For example, you can run Pylint as a step in your CI/CD pipeline and fail the build if Pylint reports errors or warnings.
+
+### Further Customization and Advanced Usage:
+
+Pylint provides various command-line options for further customization, such as specifying the error types to display, setting output formats, etc. Refer to the Pylint documentation for more details on available options and advanced usage.
+
+By using Pylint regularly and addressing the reported issues, you can improve the quality and maintainability of your Python code.
+
+# Black
+
+"Black" is a popular Python code formatting tool that automatically formats Python code to comply with a consistent style.
+
+To set up Black for formatting Python code, follow these steps:
+
+### Install Black:
+
+Start by installing Black using pip, which is the package installer for Python.
+
+```
+
+pip install black
+
+```
+
+### Usage:
+
+After installing Black, you can use it to format your Python code.
+
+```
+
+black <file_or_directory>
+
+```
+
+Black will recursively scan the directory for Python files and format them.
+
+### Integration with Editors:
+
+#### Visual Studio Code (VSCode):
+
+Install the "Python" extension by Microsoft, which includes support for formatting with Black. Open your Python file, right-click, and choose "Format Document" or use the default keyboard shortcut (Shift + Alt + F on Windows/Linux or Shift + Option + F on Mac).
+
+#### PyCharm:
+
+Black can be integrated into PyCharm as an external tool. Go to "File" > "Settings" > "Tools" > "External Tools." Click the "+" icon to add a new tool and configure it to run Black with the desired arguments.
+
+#### Other Editors:
+
+Configure Black to run as a pre-commit hook or integrate it with other editors according to their respective plugins or extensions.
+
+### Configuration:
+
+Black follows a strict formatting style, but you can customize some aspects of its behavior using a configuration file or command-line options. Create a pyproject.toml file in your project directory with the following content:
+
+```toml
+#toml
+[tool.black]
+line-length = 79
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = ''
+```
+
+Adjust the settings as per your requirements.
