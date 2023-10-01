@@ -1,5 +1,6 @@
 """Module providing a unit testing of generate_uuids module"""
 import uuid
+
 from src import generate_uuids as gu
 
 
