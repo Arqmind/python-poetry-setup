@@ -1,5 +1,5 @@
 import uuid
-from lib import generate_uuids as gu
+from src import generate_uuids as gu
 
 
 def test_generate_random_uuid():
