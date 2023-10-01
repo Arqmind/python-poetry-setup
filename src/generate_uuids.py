@@ -1,3 +1,12 @@
+"""
+Module providing a sample functions to generate uuids.
+
+This module provides immutable UUID objects (class UUID) and the functions
+uuid1(), uuid4(), uuid5() for generating version 1, 4, and 5
+UUIDs as specified in RFC 4122.
+
+"""
+
 import uuid
 
 
