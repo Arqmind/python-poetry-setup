@@ -42,7 +42,7 @@ jobs:
         run: poetry run black --check .
 
       - name: Lint with Pylint
-        run: poetry run pylint lib
+        run: poetry run pylint src
 
       - name: Type check with Mypy
         run: poetry run mypy wbchem
