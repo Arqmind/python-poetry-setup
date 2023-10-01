@@ -45,7 +45,7 @@ jobs:
         run: poetry run pylint src
 
       - name: Type check with Mypy
-        run: poetry run mypy wbchem
+        run: poetry run mypy src
 
       - name: Check import formatting with Isort
         run: poetry run isort . --check-only
