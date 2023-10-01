@@ -1,0 +1,41 @@
+ignore: "tests"
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0 # or the version you're using
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+        exclude: ^.vscode/
+      - id: check-yaml
+      - id: check-added-large-files
+
+  - repo: https://github.com/PyCQA/pylint
+    rev: v3.0.0a7 # Use the appropriate tag from the pylint repository
+    hooks:
+      - id: pylint
+        language_version: python3.8
+        additional_dependencies: [pylint]
+        exclude: ^tests/
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.4.1
+    hooks:
+      - id: mypy
+        language_version: python3.8
+        additional_dependencies: [requests]
+        exclude: ^tests/
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0 # Use the appropriate tag from the isort repository
+    hooks:
+      - id: isort
+        language_version: python3.8
+        additional_dependencies: [isort]
+
+  - repo: https://github.com/psf/black
+    rev: 23.7.0
+    hooks:
+      - id: black
+        language_version: python3.8
+        additional_dependencies: [black]

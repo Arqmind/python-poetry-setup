@@ -200,3 +200,9 @@ exclude = ''
 ```
 
 Adjust the settings as per your requirements.
+
+# isort
+
+isort is a Python utility / library to sort imports alphabetically, and automatically separated into sections and by type. It provides a command line utility, Python library and plugins for various editors to quickly sort all your imports. It requires Python 3.7+ to run but supports formatting Python 2 code too.
+
+Fore more details see [here](https://pycqa.github.io/isort/)
