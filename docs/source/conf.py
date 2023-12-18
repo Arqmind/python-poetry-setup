@@ -5,7 +5,24 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+# -- Path setup --------------------------------------------------------------
 
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
+# pylint: disable=C0103
+
+"""
+Documentation Configuration
+===========================
+
+Define the configuration options for the Sphinx documentation.
+"""
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath("../"))
 project = 'Python Poetry Setup'
 copyright = '2023, Arqmind'
 author = 'BChathoth <bchathoth@arqmind.com>'
