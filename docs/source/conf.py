@@ -23,15 +23,16 @@ import os
 import sys
 
 sys.path.insert(0, os.path.abspath("../"))
-project = 'Python Poetry Setup'
-copyright = '2023, Arqmind'
-author = 'BChathoth <bchathoth@arqmind.com>'
-release = 'v0.1'
+project = "Python Poetry Setup"
+copyright = "2023, Arqmind"
+author = "BChathoth <bchathoth@arqmind.com>"
+release = "v0.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.duration",
+extensions = [
+    "sphinx.ext.duration",
     "sphinx.ext.doctest",
     "sphinx.ext.autodoc",
     "sphinx.ext.viewcode",
@@ -43,10 +44,9 @@ templates_path = [".templates"]
 exclude_patterns = [".build", "Thumbs.db", ".DS_Store", "**/tests"]
 
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-html_output = 'html'
-html_theme = 'pyramid'
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_output = "html"
+html_theme = "pyramid"
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]
