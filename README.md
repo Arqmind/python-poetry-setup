@@ -316,4 +316,55 @@ black....................................................................Passed
 
 ```
 
+# sphinx
+
+Sphinx is a powerful documentation generation tool primarily used in the Python ecosystem to create high-quality documentation for software projects. It's a tool that transforms structured markup files into various output formats such as HTML, PDF, ePub, and more.
+
+### Installation
+
+```
+pip install -U sphinx
+```
+
+### Creating Sphinx project
+
+#### Initialize a Sphinx Project:
+
+Create a directory for your documentation and navigate to it. Then, initialize Sphinx in this directory:
+
+```
+sphinx-quickstart
+```
+
+This command will prompt you with a series of questions to set up your documentation project, including specifying project details, choosing a documentation format, configuring options, etc.
+
+#### Write Documentation:
+
+Sphinx uses reStructuredText (reST) or Markdown as its markup language. Create or edit `.rst` or `.md` files in the appropriate sections (`source` directory by default) to write your documentation.
+
+#### Configuring Sphinx:
+
+Modify the `conf.py` file to customize settings such as extensions, themes, file paths, etc., to suit your project's needs.
+
+#### Building Documentation:
+
+Once your documentation files are ready, you can build the documentation using Sphinx:
+
+```
+sphinx-build -b <output-format> source/ <output-directory>
+```
+
+<output-format>: Specify the output format you want, such as html, pdf, epub, etc.
+<output-directory>: Set the directory where the generated documentation will be placed.
+
+For example, to build HTML documentation:
+
+```
+sphinx-build -b html source/ build/html
+```
+
+#### Viewing Documentation:
+
+After the build process is complete, you can view the generated documentation by opening the HTML files in a web browser. For instance, open `index.html` or `build/html/index.html` from the output directory.
+
 # Coverage
